@@ -10,10 +10,10 @@ NUMBER_EPOCHS = 20
 CRITERION = nn.CrossEntropyLoss()
 
 # Train dataset path
-path_dataset_train = "/home/caio/Área de Trabalho/TCC-2/tcc_cnn_ia_backend/core/IA/datasheet/train"
+path_dataset_train = "/home/caio/Área de Trabalho/TCC/tcc_cnn_ia_backend/core/IA/datasheet/train"
 
 # Test dataset path
-path_dataset_test = "/home/caio/Área de Trabalho/TCC-2/tcc_cnn_ia_backend/core/IA/datasheet/test"
+path_dataset_test = "/home/caio/Área de Trabalho/TCC/tcc_cnn_ia_backend/core/IA/datasheet/test"
 
 
 # Image transform - Normalizing so that the images have the same dimension standard (255 X 255)

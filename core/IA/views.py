@@ -35,7 +35,7 @@ class IATestImage(generics.GenericAPIView):
         cnn = CNN()
 
         # Loading model
-        cnn.load_state_dict(torch.load('/home/caio/Área de Trabalho/TCC-2/tcc_cnn_ia_backend/core/IA/models/acuracia_97_model_3.pth'))
+        cnn.load_state_dict(torch.load('/home/caio/Área de Trabalho/TCC/tcc_cnn_ia_backend/core/IA/models/acuracia_97_model_3.pth'))
 
         # Putting model into evaluation mode
         cnn.eval()

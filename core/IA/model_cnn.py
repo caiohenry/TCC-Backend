@@ -82,7 +82,7 @@ class CNN(nn.Module):
         self._to_linear = x.view(1, -1).shape[1]
 
         # First fully connected layer
-        self.fc1 = nn.Linear(self._to_linear, 256)
+        self.fc1 = nn.Linear(self._to_linear, 256)  
 
         # Dropout layer with 50% chance of zeroing a neuron (avoids overfitting)
         self.dropout = nn.Dropout(0.5)

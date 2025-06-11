@@ -40,4 +40,4 @@ for epoch in range(NUMBER_EPOCHS):
 
 
 # Save model before train
-torch.save(model.state_dict(), f'/home/caio/Área de Trabalho/TCC-2/tcc_cnn_ia_backend/core/IA/models/model_3.pth')
+torch.save(model.state_dict(), f'/home/caio/Área de Trabalho/TCC/tcc_cnn_ia_backend/core/IA/models/model_3.pth')
