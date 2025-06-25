@@ -29,7 +29,7 @@ class IATestImage(generics.GenericAPIView):
         sleep(1)
 
         # Classes names
-        class_names = ['Possui Câncer', 'Não Possui Câncer'] 
+        class_names = ['Presença de Tumor', 'Ausência de Tumor'] 
 
         # CNN Model Instance	
         cnn = CNN()

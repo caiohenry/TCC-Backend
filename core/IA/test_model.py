@@ -19,8 +19,8 @@ total = 0
 true_labels = []
 pred_labels = []
 pred_scores = []
-class_labels_pt = ['Baixa Probabilidade de Tumor', 'Alta Probabilidade de Tumor']
-pred_labels_pt = ['Baixa Probabilidade\n de Tumor', 'Alta Probabilidade\n de Tumor']
+class_labels_pt = ['Presença de Tumor', 'Ausência de Tumor']
+pred_labels_pt = ['Presença \nde Tumor', 'Ausência \nde Tumor']
 
 # Test loader
 test_loader = torch.utils.data.DataLoader(dataset_test, batch_size=BATCH_SIZE, shuffle=True)
@@ -67,13 +67,15 @@ conf_matrix_percent = conf_matrix.astype('float') / conf_matrix.sum(axis=1)[:, n
 df_cm = pd.DataFrame(conf_matrix_percent, index=pred_labels_pt, columns=class_labels_pt)
 fmt_values = np.vectorize(lambda x: f"{x:.2f}%")(conf_matrix_percent)
 plt.figure(figsize=(8, 6))
-sns.heatmap(df_cm, annot=fmt_values, fmt='', cmap='Blues', cbar=False)
+sns.heatmap(df_cm, annot=fmt_values, fmt='', cmap='Blues', cbar=False, annot_kws={"fontsize": 30})
 
-plt.title("Matriz de Confusão (%)")
-plt.ylabel("Classe Verdadeira") 
-plt.xlabel("Classe Prevista")
-plt.xticks(rotation=0)
-plt.yticks(rotation=0)
+plt.ylabel("Classe Verdadeira", fontsize=20)
+plt.xlabel("Classe Prevista", fontsize=20)
+
+# Rótulos dos ticks
+plt.xticks(fontsize=18, rotation=0)
+plt.yticks(fontsize=18, rotation=0)
+
 plt.tight_layout()
 plt.savefig("matriz_confusao_percentual.png")
 plt.show()
@@ -86,7 +88,7 @@ if set(true_bin) == {1, 2}:
 fpr, tpr, _ = roc_curve(true_bin, pred_scores)
 roc_auc = auc(fpr, tpr)
 
-print(f"AUC: {roc_auc:.2f}")
+
 # Plot ROC
 plt.figure()
 plt.plot(fpr, tpr, label=f'AUC = {roc_auc:.2f}')
